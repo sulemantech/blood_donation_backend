@@ -20,12 +20,32 @@ const postDonateBlood = async (req, res) => {
         res.status(500).json({ error: 'Internal Server Error in postDonateBlood, donateBloodController.js' });
     }
 }
+
+const getAllDonateBlood = async (req, res) => {
+    try {
+        
+        
+        const getDonateBloodDetails = await donateBloodModel.findAll();
+
+        // Respond with the retrieved data
+        res.status(200).json(getDonateBloodDetails);
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: 'Internal Server Error in getAllDonateBlood, donateBloodController.js' });
+    }
+}
 module.exports={
-    postDonateBlood,
+    postDonateBlood,getAllDonateBlood,
     post:[
         {
             path:"/api/donateBlood",
             method: postDonateBlood
+        }
+    ],
+    get:[
+        {
+            path:"/api/getDonateBlood",
+            method: getAllDonateBlood
         }
     ]
 }
