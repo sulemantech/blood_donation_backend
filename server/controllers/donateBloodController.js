@@ -44,7 +44,7 @@ module.exports={
     ],
     get:[
         {
-            path:"/api/getDonateBlood",
+            path:"/api/getBlood",
             method: getAllDonateBlood
         }
     ]

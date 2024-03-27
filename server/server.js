@@ -3,6 +3,8 @@ const cors =require('cors');
 const cookieParser = require('cookie-parser');
 const {userRoute,donateBloodRoute,createRequestRoute,ratingRoute}=require('./routes/index');
 const sequelize = require('./config/config');
+const swaggerUi = require('swagger-ui-express');
+
 require('dotenv').config();
 
 const app = express();
@@ -23,6 +25,9 @@ sequelize.sync({ force: false }) // This will drop the existing tables and recre
     console.error('An error occurred while synchronizing the database:', err);
   });
 
+
+//swagger Api's
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(require('./swagger_output.json')));
 
 //signin route
 app.use('/', userRoute)

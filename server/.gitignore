@@ -1,11 +1,9 @@
 /node_modules
-swagger_output.json
 .env
 /config.js
 config.js
 yarn.lock
 .DS_STORE
-swagger_output.json
 node_modules
 node_modules/
 scripts/flow/*/.flowconfig
@@ -18,9 +16,6 @@ _SpecRunner.html
 _benchmarks_
 build/
 remote-repo/
-swagger_output.json
-swagger_output
-/swagger_output.json
 serviceAccount.json
 /serviceAccount.json
 coverage/
